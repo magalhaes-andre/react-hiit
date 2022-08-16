@@ -1,3 +1,9 @@
+# React HIIT
+This project aims at creating a High Intensity Interval Training timer with React, all of my learn process and notes can be found on [this project log](log.md)
+
+All of the below is just static readme info created by create-react-app.
+
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

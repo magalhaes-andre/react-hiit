@@ -55,3 +55,11 @@ All of the application code:
 - __robots.txt:__
     This file shows to google robots which folders we want to be indexed.
 ---
+## 29/11/2022 - Oh Damn:
+
+Yeah, it is been so much time since i've picked this up. Well, let's hope i get to the end of it before Christmas.
+
+Interesting things of today:
+- Creation of my first component
+- Creation of Class Components
+- Creation of Function Components

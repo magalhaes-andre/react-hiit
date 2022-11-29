@@ -4,6 +4,16 @@ This project aims at creating a High Intensity Interval Training timer with Reac
 All of the below is just static readme info created by create-react-app.
 
 ---
+# React Important Principles and Philosophies
+
+## "_Don't repeat yourself_"
+
+## SRP -> {Single Responsability Principle}
+
+
+
+
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

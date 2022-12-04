@@ -6,21 +6,24 @@ import { IExercise } from '../types/exercise';
 import style from './App.module.scss';
 
 function App() {
-  const [exercises, setExercises] = useState<IExercise[]>([{
-    name: "Chest",
-    time: "00:04:00"
-  }, {
-    name: "Triceps",
-    time: "00:03:00"
+  const [exercises, setExercises] = useState<IExercise[]>([]);
+  const [selected, setSelected] = useState<IExercise>();
 
-  }, {
-    name: "Quadriceps",
-    time: "00:02:00"
-  }]);
+  function selectExercise(selectedExercise: IExercise) {
+    setSelected(selectedExercise);
+    setExercises(oldExercises => oldExercises.map(exercise => ({
+      ...exercise,
+      selected: exercise.id === selectedExercise.id ? true : false
+    })));
+  }
+
   return (
+    //The below solution before the Stopwatch component call is not the best one. To have an interesting workaround it needs to consider global management.
     <div className={style.AppStyle}>
       <Form setExercises={setExercises}/>
-      <List exercises={exercises} />
+      <List 
+        exercises={exercises}
+        selectExercise={selectExercise} />
       <Stopwatch />
     </div>
   );

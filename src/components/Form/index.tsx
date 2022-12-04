@@ -6,7 +6,7 @@ class Form extends React.Component {
     render() {
         return (
             <form>
-                <div>
+                <div className='inputContainer'>
                     <label htmlFor='exercise'>
 
                     </label>
@@ -17,6 +17,7 @@ class Form extends React.Component {
                         placeholder="What's the exercise you'll be doing?"
                         required/>
                 </div>
+                <div className='inputContainer'>
                    <label>
                     Time
                    </label>
@@ -27,8 +28,6 @@ class Form extends React.Component {
                         id="time"
                         min="00:00:00"
                         max="01:30:00"/>
-                <div>
-
                 </div>
                 <Button/>
             </form>

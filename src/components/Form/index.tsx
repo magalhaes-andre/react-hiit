@@ -1,14 +1,15 @@
 import React from 'react';
 import Button from '../Button';
+import './style.scss'
 
 //Class Component
 class Form extends React.Component {
     render() {
         return (
-            <form>
+            <form className='newExercise'>
                 <div className='inputContainer'>
                     <label htmlFor='exercise'>
-
+                    Add Your Next Exercise
                     </label>
                     <input 
                         type="text"

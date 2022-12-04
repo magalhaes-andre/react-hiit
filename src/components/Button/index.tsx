@@ -1,12 +1,13 @@
 import React from 'react';
-import './style.scss'
+import { text } from 'stream/consumers';
+import style from './Button.module.scss'
 
 //Class Component
-class Button extends React.Component {
+class Button extends React.Component<{ text: String}> {
     render() {
         return (
-            <button className='button'>
-                Button
+            <button className={style.button}>
+                {this.props.text}
             </button>
         )
     }

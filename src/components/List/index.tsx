@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.scss';
+import style from './List.module.scss';
 
 //Function Component --> After React 18, Function components are able to maintain state TODO: Research more on it and add to Readme.MD
 function List() {
@@ -21,11 +21,11 @@ function List() {
     //TODO: Study aside tag
     //Dynamic renders need to have keys as in li
     return (
-        <aside className='exerciseList'>
+        <aside className={style.exerciseList}>
             <h2> Today's Exercises </h2>
             <ul>
                 {exercises.map((exercise, index) => (
-                    <li key={exercise.id} className='item'>
+                    <li key={exercise.id} className={style.item}>
                         <h3> {exercise.name} </h3>
                         <span> {exercise.time} </span>
                     </li>

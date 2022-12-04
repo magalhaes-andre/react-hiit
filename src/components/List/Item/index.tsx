@@ -1,5 +1,5 @@
 import { IExercise } from '../../../types/exercise';
-import style from '../List.module.scss';
+import style from './Item.module.scss';
 
 interface Props extends IExercise {
     selectExercise: (selectExercise: IExercise) => void
@@ -14,7 +14,6 @@ export default function Item(
         id,
         selectExercise
     }: Props) {
-    console.log('current item: ', { name, time, selected, completed, id })
 
     return (
         <li

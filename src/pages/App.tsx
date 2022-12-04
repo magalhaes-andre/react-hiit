@@ -24,7 +24,7 @@ function App() {
       <List 
         exercises={exercises}
         selectExercise={selectExercise} />
-      <Stopwatch />
+      <Stopwatch selected={selected}/>
     </div>
   );
 }

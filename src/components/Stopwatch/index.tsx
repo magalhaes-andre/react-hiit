@@ -26,7 +26,6 @@ export default function Stopwatch({selected}: Props) {
     return (
         <div className={style.stopwatch}>
             <p className={style.title}>Choose an exercise and start the clock.</p>
-            <>Time: {time}</>
             <div className={style.clockWrapper}>
                 <Clock />
             </div>

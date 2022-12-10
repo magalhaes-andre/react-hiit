@@ -10,12 +10,13 @@ interface Props {
 }
 
 
-export function Stopwatch({selected}: Props) {
+export default function Stopwatch({selected}: Props) {
     const [time, setTime] = useState<Number>();
     
     if(selected?.time) {
         setTime(timeToSeconds(selected.time))
     }
+    
     return (
         <div className={style.stopwatch}>
             <p className={style.title}>Choose an exercise and start the clock.</p>

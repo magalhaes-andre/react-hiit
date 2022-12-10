@@ -7,6 +7,9 @@ Below you have some things that were important to note (in my opinion) while i w
 # TODO:
 Finish all other TODO's listed through the code.
 
+# Interesting Articles:
+- [Hooks Motivation](https://reactjs.org/docs/hooks-intro.html#motivation)
+
 # React Important Principles and Philosophies
 
 ## "_Don't repeat yourself_"

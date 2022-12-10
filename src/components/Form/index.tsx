@@ -3,7 +3,7 @@ import React, { SetStateAction } from 'react';
 import Button from '../Button';
 import style from './Form.module.scss'
 import { IExercise } from '../../types/exercise'
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 //Class Component
 class Form extends React.Component<{

@@ -15,10 +15,11 @@ export default function Item(
         selectExercise
     }: Props) {
 
+    //  Conditional rendering on line 31. TODO: Research on the topic.    
     return (
         <li
-            className={`${style.item} ${selected ? style.selectedItem : ''}`}
-            onClick={() => selectExercise({
+            className={`${style.item} ${selected ? style.selectedItem : ''} ${completed ? style.completedItem : ''}`}
+            onClick={() => !completed && selectExercise({
                 name,
                 time,
                 selected,
@@ -27,6 +28,7 @@ export default function Item(
             })}>
             <h3> {name} </h3>
             <span> {time} </span>
+            {completed && <span className={style.done} aria-label="exercise finished"></span>}
         </li>
     )
 

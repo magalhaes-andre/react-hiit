@@ -1,9 +1,12 @@
-# React HIIT
+# React HIIT (WIP)
 This project aims at creating a High Intensity Interval Training timer with React, all of my learn process and notes can be found on [this project log](log.md)
 
 Below you have some things that were important to note (in my opinion) while i was producing this repository.
 
 ---
+# TODO:
+Finish all other TODO's listed through the code.
+
 # React Important Principles and Philosophies
 
 ## "_Don't repeat yourself_"

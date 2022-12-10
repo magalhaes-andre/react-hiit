@@ -7,6 +7,7 @@ interface Props {
     onClick?: () => void
 }
 
+// TODO: Study benefits of function components x class components.
 export default function Button({ onClick, type, text }: Props) {
     return (
         <button type={type} className={style.button} onClick={onClick}>

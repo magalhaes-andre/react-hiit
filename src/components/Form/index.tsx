@@ -1,77 +1,72 @@
-import { time } from 'console';
-import React, { SetStateAction } from 'react';
+import React, { SetStateAction, useState } from 'react';
 import Button from '../Button';
 import style from './Form.module.scss'
 import { IExercise } from '../../types/exercise'
 import { v4 as uuidv4 } from 'uuid';
 
-//Class Component
-class Form extends React.Component<{
+interface Props {
     setExercises: React.Dispatch<React.SetStateAction<IExercise[]>>
-}> {
-
-
-    state = {
-        name: "",
-        time: "00:00"
-    }
-
-    //Function creation in class component
-    addExercise(event: React.FormEvent) {
-        event.preventDefault();
-        this.props.setExercises(oldExercises =>
-            [...oldExercises,
-            {
-                ...this.state,
-                selected: false,
-                completed: false,
-                id: uuidv4()
-            }
-            ]
-        )
-        this.setState({
-            name: "",
-            time: "00:00"
-        })
-    }
-
-    render() {
-        return (
-            //this.function.bind is needed in order to React be able to pass the state into the addExercise fucntion. This is due to scope limitations in class components.
-            <form className={style.newExercise} onSubmit={this.addExercise.bind(this)}>
-                <div className={style.inputContainer}>
-                    <label htmlFor='exercise'>
-                        Add Your Next Exercise
-                    </label>
-                    <input
-                        type="text"
-                        name="exercise"
-                        value={this.state.name}
-                        onChange={event => { this.setState({ ...this.state, name: event.target.value }) }}
-                        id="exercise"
-                        placeholder="What's the exercise you'll be doing?"
-                        required />
-                </div>
-                <div className={style.inputContainer}>
-                    <label>
-                        Time
-                    </label>
-                    <input
-                        type="time"
-                        step="1"
-                        name="time"
-                        value={this.state.time}
-                        onChange={event => { this.setState({ ...this.state, time: event.target.value }) }}
-                        id="time"
-                        min="00:00:00"
-                        max="01:30:00" />
-                </div>
-                <Button
-                    text="Add"
-                    type="submit" />
-            </form>
-        )
-    }
 }
 
-export default Form;
+export default function Form({ setExercises }: Props) {
+    const [name, setExercise] = useState("");
+    const [time, setTime] = useState("00:00");
+
+    function addExercise(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        setExercises(oldExercises =>
+            [
+                ...oldExercises,
+                {
+                    name,
+                    time,
+                    selected: false,
+                    completed: false,
+                    id: uuidv4()
+                }
+            ]
+        )
+        setExercise("");
+        setTime("00:00");
+    }
+
+    return (
+        /*  this.function.bind is needed in order to React be able to pass the state into the addExercise fucntion. 
+            This is due to scope limitations in class components. -> 
+            This is not needed anymore due to moving into function component. 
+            TODO: Study why.
+        */
+        <form className={style.newExercise} onSubmit={addExercise}>
+            <div className={style.inputContainer}>
+                <label htmlFor='exercise'>
+                    Add Your Next Exercise
+                </label>
+                <input
+                    type="text"
+                    name="exercise"
+                    value={name}
+                    onChange={event => { setExercise(event.target.value) }}
+                    id="exercise"
+                    placeholder="What's the exercise you'll be doing?"
+                    required />
+            </div>
+            <div className={style.inputContainer}>
+                <label>
+                    Time
+                </label>
+                <input
+                    type="time"
+                    step="1"
+                    name="time"
+                    value={time}
+                    onChange={event => { setTime(event.target.value) }}
+                    id="time"
+                    min="00:00:00"
+                    max="01:30:00" />
+            </div>
+            <Button
+                text="Add"
+                type="submit" />
+        </form>
+    )
+}
